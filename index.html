@@ -1,40 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Google Font Smythe -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Smythe&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+        <!-- Google Font Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        
+        <title>Restaurant menu</title>
         <link rel="stylesheet" href="index.css">
-        <title>Fayham's Diner</title>
     </head>
-
     <body>
-        <header>
-            <div class="header-container">
+        <div class="container" id="container">
+            <div class="filter" id="filter"></div>
+            <header>
                 <h1>Fayham's Diner</h1>
-                <p>The best burgers and pizzas in town.</p>
-                <img 
-                    src="./images/header.png" 
-                    alt="A close-up of a cooked burger, which is placed on a wooden surface and includes a bun, lettuce, onion, egg, cheese, and a beef patty."
-                />
-            </div>
-        </header>
+                <h2>The best burgers and pizzas in town.</h2>
+            </header>
 
-        <main class="main-container">
-            <section id="menu-section" class="menu-section">
+            <section id="menu" class="menu"></section>
 
+            <section class="order" id="order">
+                <h3>Your order</h3>
+                <div class="order-items" id="order-items"></div>
+                <div class="total" class="total">
+                    <h3>Total price:</h3>
+                    <span id="total-price"></span>
+                </div>
+                <button type="submit" id="order-btn">Complete order</button>
             </section>
-            <section id="checkout-section" class="checkout-section">
 
-            </section>
-            
-        </main>
+            <h3 class="thanks" id="thanks-el"></h3>
+        </div>
+        
+        <form id="form">
+            <button class="close-btn" id="close-btn"><i id="close-icon" class="fa-solid fa-x"></i></button>
+            <h3>Enter card Details</h3>
+            <input type="text" name="fullName" placeholder="Enter your name" required>
+            <input type="text" name="cardNumber" placeholder="Enter card number" required>
+            <input type="text" name="cvv" placeholder="Enter CVV" required>
+            <button type="submit" class="pay-btn" id="pay-btn">Pay</button>
+        </form>
 
-        <script src="index.js"></script>
-
+	    <script src="index.js" type="module"></script>
     </body>
-
 </html>
+

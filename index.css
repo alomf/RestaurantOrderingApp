@@ -1,13 +1,318 @@
-body {
-    font-family: 'Smythe', sans-serif;
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Smythe", system-ui;
+    font-size: 1rem;
+    background-color: #F5F5F5;
+    position: relative;
+} 
+
+.container {
+    width: 600px;
+    margin-inline: auto;
+    background-color: #FFF;
+    padding-bottom: 1px;
+}
+
+.filter {
+    position: fixed;
+    display: none;
+    inset: 0 0 0 0;
+    opacity: 0.8;
+    /* background: rgb(255,255,255); */
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(168,168,168,1) 21%, rgba(250,250,250,1) 76%);
+}
+
+header {
+    width: 100%;
+    height: 167px;
+    background-image: url('/images/bg-img.png');
+    background-size: cover;
+}
+
+h1 {
+    font-size: 2.43rem;
+    color: #FFF;
+    font-weight: 400;
+    padding: 40px 0 0 46px;
+    margin: 0 0 0 0;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #FFF;
+    padding: 0 0 0 46px;
+    margin: 0;
+}
+
+.menu {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 21px 46px 46px 21px;
 }
 
-.header-container,
-.main-container {
-    width: 500px;
+.menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 23px;
+    padding-bottom: 46px;
+    border-bottom: 1px solid #D2D2D2
+}
+
+.menu-item-emoji{
+    width: 90px ;
+    font-size: 67px;
+    text-align: center;
+    margin-right: 25px;
+}
+
+.menu-item-text h3 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+.menu-item-text p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #8B8B8B;
+}
+
+.menu-item-text span {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+
+}
+
+.menu-item-btn {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 47px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin: 0 0 0 auto;
+    border: 1.5px solid #DEDEDE;
+}
+
+.menu-item-btn:hover, .menu-item-btn:focus {
+    border: 2px solid #a5a5a5;
+    font-weight: 300;
+}
+
+.menu-item-btn:active {
+    border: 2px solid #16DB99;
+    font-weight: 300;
+    color: #16DB99;
+}
+
+.order {
+    display: none; /* flex when displayed */
+    flex-direction: column;
+    width: 100%;
+    padding: 0 46px 53px 46px;
+}
+
+.order h3{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 54px;
+    font-weight: 400;
+}
+
+.order-item {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.order-item h4 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.order-item .item-multiplier{
+    font-size: 16px;
+    font-family: "inter", sans-serif;
+    font-weight: 400;
+    margin-top: 5px;
+    letter-spacing: 1.5px;
+    color: #31a8dc;
+}
+
+.order-item .remove-span {
+    color: #BBBBBB;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+
+.order-item .order-item-price {
+    font-size: 20px;
+    margin: 0 0 0 auto
+}
+
+.total {
+    border-top: 2px solid #393333;
+    margin-top: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 53px; */
+}
+
+.total h3{
+    font-size: 28px;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 53px;
+}
+
+.total span{
+    font-size: 20px;
+}
+
+.order button {
+    width: 100%;
+    background-color: #16DB99;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    padding-block: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.order button:hover, .order button:focus {
+    background-color: #34D399;
+    box-shadow: 2px 2px 5px #8B8B8B;
+    outline: 2px solid #38BDF8 ;
+}
+
+.order button:active {
+    background-color: #10B981;
+    box-shadow: none;
+    outline: none;
+}
+
+form {
+    position: fixed;
+    top: 270px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: 540px;
+    background-color: #ffffff;
+    display: none; /* flex when displayed */
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
+    padding: 0 25px 30px 25px;
+    border-radius: 4px;
 }
 
+form .close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 10px 0 0 auto;
+    border: 2px solid #9f9f9f;
+    background-color: transparent;
+    color: #9f9f9f;
+    font-size: 22px;
+}
+
+/* .fa-x {
+    color: #9f9f9f;
+    font-size: 22px;
+} */
+
+form .close-btn:hover, form .close-btn:focus {
+    color: #000;
+    border: 2px solid #000;
+}
+
+form .close-btn:active {
+    color: #d1434a;
+    border: 2px solid #d1434a;
+}
+
+form h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-block: 26px 46px;
+}
+
+form input {
+    width: 100%;
+    font-size: 20px;
+    padding: 22px 5px 22px 20px;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    margin-bottom: 23px;
+    color: #000;
+}
+
+form input::placeholder {
+    color: #757575;
+}
+
+form .pay-btn {
+    width: 100%;
+    background-color: #16DB99;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding-block: 15px ;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 23px;
+}
+
+form .pay-btn:hover, .form button:focus {
+    background-color: #34D399;
+    box-shadow: 2px 2px 5px #8B8B8B;
+    outline: 2px solid #38BDF8 ;
+}
+
+form .pay-btn:active {
+    background-color: #10B981;
+    box-shadow: none;
+    outline: none;
+}
+
+.thanks {
+    display: none;
+    width: 504px;
+    font-size: 32px;
+    color: #065F46;
+    background-color: #ECFDF5;
+    text-align: center;
+    padding-block: 50px;
+    margin: 0 auto 46px auto;
+    border-radius: 3px;
+    font-weight: 400;
+}
